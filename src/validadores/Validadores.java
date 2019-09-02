@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Pacote de validações comuns como CNPJ e CPF.
  */
 package validadores;
 
@@ -13,13 +11,12 @@ public class Validadores {
 
     /**
      * @param args the command line arguments
-     * @throws java.lang.Exception
      */
     public static void main(String[] args) throws Exception {
 
         try {
             CNPJ.validar("11.222.333/0001-81");
-            CNPJ.validar("14.572.457.0001-85");
+            CNPJ.validar("14.572.457/0001-85");
             CNPJ.validar("71.967.796/0001-02");
             CNPJ.validar("15.476.007/0001-51");
             CNPJ.validar("56.913.012/0001-61");
@@ -30,7 +27,7 @@ public class Validadores {
             CNPJ.validar("80.555.080/0001-80");
             CNPJ.validar("28.454.332/0001-65");
             CNPJ.validar("69.896.606/0001-53");
-            CNPJ.validar("03.984.842/0001-13");
+            CNPJ.validar("03984842000113");
             
             CPF.validar("111.444.777-35");
             CPF.validar("328.782.170-98");
@@ -42,11 +39,10 @@ public class Validadores {
             CPF.validar("256.252.400-43");
             CPF.validar("929.350.500-29");
             CPF.validar("240.104.580-54");
-            CPF.validar("894.009.420-44");
+            CPF.validar("89400942044");
         } catch (Exception e) {
             System.err.println(e.getMessage());
         }
-        // TODO code application logic here
     }
 
 }

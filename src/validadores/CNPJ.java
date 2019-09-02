@@ -22,7 +22,6 @@ public class CNPJ {
         if (CNPJ.equals("00000000000000") || !calculaPrimeiroDigito(CNPJ) || !calculaSegundoDigito(CNPJ)) {
             throw new Exception("CNPJ:" + CNPJ + " inválido.");
         }
-
     }
 
     /**
