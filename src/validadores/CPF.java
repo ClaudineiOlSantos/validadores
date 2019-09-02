@@ -17,9 +17,14 @@ public class CPF {
      * @throws Exception
      */
     public static void validar(String CPF) throws Exception {
+        //Limpa a string
         CPF = CPF.replaceAll("\\.", "").replaceAll("/", "").replaceAll("-", "").trim();
 
-        if (CPF.equals("00000000000") || !calculaPrimeiroDigito(CPF) || !calculaSegundoDigito(CPF)) {
+        //Valida o CPF
+        if (CPF.equals("00000000000")
+                || !validaPrimeiroDigito(CPF)
+                || !validaSegundoDigito(CPF)
+                || CPF.length() != 11) {
             throw new Exception("CPF:" + CPF + " inválido.");
         }
     }
@@ -31,7 +36,7 @@ public class CPF {
      * @return
      * @throws Exception
      */
-    private static boolean calculaPrimeiroDigito(String CPF) throws Exception {
+    private static boolean validaPrimeiroDigito(String CPF) throws Exception {
         int[] multiplicador = {10, 9, 8, 7, 6, 5, 4, 3, 2};
         int[] auxiliar = new int[multiplicador.length];
 
@@ -62,7 +67,7 @@ public class CPF {
      * @return
      * @throws Exception
      */
-    private static boolean calculaSegundoDigito(String CPF) throws Exception {
+    private static boolean validaSegundoDigito(String CPF) throws Exception {
         int[] multiplicador = {11, 10, 9, 8, 7, 6, 5, 4, 3, 2};
         int[] auxiliar = new int[multiplicador.length];
 

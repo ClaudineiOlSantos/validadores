@@ -17,9 +17,14 @@ public class CNPJ {
      * @throws Exception
      */
     public static void validar(String CNPJ) throws Exception {
+        //Limpa a string
         CNPJ = CNPJ.replaceAll("\\.", "").replaceAll("/", "").replaceAll("-", "").trim();
 
-        if (CNPJ.equals("00000000000000") || !calculaPrimeiroDigito(CNPJ) || !calculaSegundoDigito(CNPJ)) {
+        //Valida o CNPJ
+        if (CNPJ.equals("00000000000000")
+                || !validaPrimeiroDigito(CNPJ)
+                || !validaSegundoDigito(CNPJ)
+                || CNPJ.length() != 14) {
             throw new Exception("CNPJ:" + CNPJ + " inválido.");
         }
     }
@@ -31,7 +36,7 @@ public class CNPJ {
      * @return
      * @throws Exception
      */
-    private static boolean calculaPrimeiroDigito(String CNPJ) throws Exception {
+    private static boolean validaPrimeiroDigito(String CNPJ) throws Exception {
         int[] multiplicador = {5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2};
         int[] auxiliar = new int[multiplicador.length];
 
@@ -62,7 +67,7 @@ public class CNPJ {
      * @return
      * @throws Exception
      */
-    private static boolean calculaSegundoDigito(String CNPJ) throws Exception {
+    private static boolean validaSegundoDigito(String CNPJ) throws Exception {
         int[] multiplicador = {6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2};
         int[] auxiliar = new int[multiplicador.length];
 
