@@ -13,6 +13,7 @@ public class Validadores {
 
     /**
      * @param args the command line arguments
+     * @throws java.lang.Exception
      */
     public static void main(String[] args) throws Exception {
 
@@ -30,6 +31,18 @@ public class Validadores {
             CNPJ.validar("28.454.332/0001-65");
             CNPJ.validar("69.896.606/0001-53");
             CNPJ.validar("03.984.842/0001-13");
+            
+            CPF.validar("111.444.777-35");
+            CPF.validar("328.782.170-98");
+            CPF.validar("890.034.370-09");
+            CPF.validar("230.182.210-95");
+            CPF.validar("887.555.440-45");
+            CPF.validar("454.213.510-17");
+            CPF.validar("838.544.300-27");
+            CPF.validar("256.252.400-43");
+            CPF.validar("929.350.500-29");
+            CPF.validar("240.104.580-54");
+            CPF.validar("894.009.420-44");
         } catch (Exception e) {
             System.err.println(e.getMessage());
         }
