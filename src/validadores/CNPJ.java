@@ -45,11 +45,8 @@ public class CNPJ {
         //Faz as devidas multiplicações
         for (int c = 0; c < auxiliar.length; c++) {
             auxiliar[c] = multiplicador[c] * Integer.parseInt(String.valueOf(CNPJ.charAt(c)));
-        }
-
-        //Faz as somas
-        for (int c = 0; c < auxiliar.length; c++) {
             somatorio += auxiliar[c];
+
         }
 
         // Calcula o valor do dígito

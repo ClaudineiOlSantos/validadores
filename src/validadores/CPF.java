@@ -45,11 +45,8 @@ public class CPF {
         //Faz as devidas multiplicações
         for (int c = 0; c < auxiliar.length; c++) {
             auxiliar[c] = multiplicador[c] * Integer.parseInt(String.valueOf(CPF.charAt(c)));
-        }
+                        somatorio += auxiliar[c];
 
-        //Faz as somas
-        for (int c = 0; c < auxiliar.length; c++) {
-            somatorio += auxiliar[c];
         }
 
         // Calcula o valor do dígito
